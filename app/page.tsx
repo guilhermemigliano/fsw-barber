@@ -3,6 +3,9 @@ import Header from './_components/header'
 import { Button } from './_components/ui/button'
 import { Input } from './_components/ui/input'
 import Image from 'next/image'
+import { Card, CardContent } from './_components/ui/card'
+import { Badge } from './_components/ui/badge'
+import { Avatar, AvatarImage } from './_components/ui/avatar'
 
 const Home = () => {
   return (
@@ -27,6 +30,29 @@ const Home = () => {
             className="object-cover rounded-xl"
           />
         </div>
+
+        {/* AGENDAMENTO */}
+        <Card className="mt-6">
+          <CardContent className="flex justify-between p-0">
+            <div className="flex flex-col gap-2 py-5 pl-5">
+              <Badge className="w-fit">Confirmado</Badge>
+              <h3 className="font-semibold">Corte de Cabelo</h3>
+
+              <div className="flex items-center gap-2">
+                <Avatar className="h-6 w-6">
+                  <AvatarImage src="https://avatars.githubusercontent.com/u/44805868?v=4" />
+                </Avatar>
+                <p className="text-sm">Barbearia FSW</p>
+              </div>
+            </div>
+
+            <div className="flex flex-col items-center justify-center px-5 border-l-2 border-solid">
+              <p className="text-sm">Agosto</p>
+              <p className="text-2xl">05</p>
+              <p className="text-sm">20:00</p>
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </div>
   )
