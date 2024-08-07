@@ -20,7 +20,7 @@ const ServiceItem = ({ service }: ServiceItemProps) => {
           />
         </div>
 
-        <div className="space-y-2">
+        <div className="space-y-3 w-full">
           <h3 className="font-semibold text-sm">{service.name}</h3>
           <p className="text-gray-400 text-sm">{service.description}</p>
           <div className="flex items-center justify-between">
