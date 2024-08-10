@@ -14,7 +14,7 @@ import {
 import { Calendar } from './ui/calendar'
 import { ptBR } from 'date-fns/locale'
 import { useEffect, useState } from 'react'
-import { format, set } from 'date-fns'
+import { addDays, format, set } from 'date-fns'
 import { createBooking } from '../_actions/create-booking'
 import { useSession } from 'next-auth/react'
 import { toast } from 'sonner'
@@ -183,7 +183,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                       locale={ptBR}
                       selected={selectedDay}
                       onSelect={handleDateSelect}
-                      fromDate={new Date()}
+                      fromDate={addDays(new Date(), 1)}
                       styles={{
                         head_cell: {
                           width: '100%',
