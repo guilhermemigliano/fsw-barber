@@ -123,7 +123,6 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
       })
       await createBooking({
         serviceId: service.id,
-        userId: (data?.user as any).id,
         date: newDate
       })
       handleBookingSheetOpenChange()
@@ -183,7 +182,7 @@ const ServiceItem = ({ service, barbershop }: ServiceItemProps) => {
                       locale={ptBR}
                       selected={selectedDay}
                       onSelect={handleDateSelect}
-                      fromDate={addDays(new Date(), 1)}
+                      fromDate={new Date()}
                       styles={{
                         head_cell: {
                           width: '100%',
