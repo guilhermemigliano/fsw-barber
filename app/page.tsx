@@ -1,7 +1,5 @@
-import { SearchIcon } from 'lucide-react'
 import Header from './_components/header'
 import { Button } from './_components/ui/button'
-import { Input } from './_components/ui/input'
 import Image from 'next/image'
 import { db } from './_lib/prisma'
 import BarbershopItem from './_components/barbershop-item'
@@ -105,7 +103,10 @@ const Home = async () => {
             </h2>
             <div className="flex overflow-x-auto gap-3 [&::-webkit-scrollbar]:hidden">
               {confirmedBookings.map(booking => (
-                <BookingItem key={booking.id} booking={booking} />
+                <BookingItem
+                  key={booking.id}
+                  booking={JSON.parse(JSON.stringify(booking))}
+                />
               ))}
             </div>
           </>
