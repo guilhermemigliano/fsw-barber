@@ -31,6 +31,7 @@ import { DialogClose } from '@radix-ui/react-dialog'
 import { deleteBooking } from '../_actions/delete-booking'
 import { toast } from 'sonner'
 import { useState } from 'react'
+import BookingSummary from './booking-summary'
 
 interface BookingItemProps {
   booking: Prisma.BookingGetPayload<{
@@ -129,7 +130,14 @@ const BookingItem = ({ booking }: BookingItemProps) => {
             {isConfirmed ? 'Confirmado' : 'Finalizado'}
           </Badge>
 
-          <Card className="mt-3 mb-6">
+          <div className="mt-3 mb-6">
+            <BookingSummary
+              barbershop={barbershop}
+              service={booking.service}
+              selectedDate={booking.date}
+            />
+          </div>
+          {/* <Card className="mt-3 mb-6">
             <CardContent className="space-y-3 p-3">
               <div className="flex items-center justify-between">
                 <h2 className="font-bold">{booking.service.name}</h2>
@@ -162,7 +170,7 @@ const BookingItem = ({ booking }: BookingItemProps) => {
                 <p className="text-sm">{barbershop.name}</p>
               </div>
             </CardContent>
-          </Card>
+          </Card> */}
 
           <div className="space-y-3">
             {barbershop.phones.map((phone, index) => (
